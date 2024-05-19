@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Car Request Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<form action="rental_process.php" method="post">
+    <h2>Rental Car Request Form</h2>
+    <label for="pickup_point">Pickup Point:</label>
+    <input type="text" id="pickup_point" name="pickup_point" required>
+   
+    <label for="destination_point">Destination Point:</label>
+    <input type="text" id="destination_point" name="destination_point" required>
+   
+    <label for="pickup_date">Pickup Date:</label>
+    <input type="date" id="pickup_date" name="pickup_date" required>
+   
+    <label for="return_date">Return Date:</label>
+    <input type="date" id="return_date" name="return_date" required>
+   
+    <label for="passenger_count">Number of Passengers:</label>
+    <input type="number" id="passenger_count" name="passenger_count" required>
+   
+    <label for="mobile_number">Mobile Number:</label>
+    <input type="tel" id="mobile_number" name="mobile_number" pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number" required>
+   
+    <label for="car_type">Car Type:</label>
+    <select id="car_type" name="car_type" required>
+        <option value="">Select Car Type</option>
+        <option value="Sedan">Sedan</option>
+        <option value="SUV">SUV</option>
+        <option value="Luxery">Van</option>
+    </select>
+
+    <input type="submit" value="Submit Request">
+</form>
+
+</body>
+</html>
